@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Habit Tracker</h1>
+
+    <div class="top-info">
+        <p id="streak">🔥 Streak : 0</p>
+        <p id="xp">⭐ XP : 0</p>
+        <p id="level">🏆 Level : Beginner</p>
+    </div>
+
+    <div class="quote">
+        <p id="quote"></p>
+    </div>
+
+    <div class="input-box">
+
+        <input
+            type="text"
+            id="habitInput"
+            placeholder="Enter Habit">
+
+        <select id="category">
+            <option value="Fitness">🏋 Fitness</option>
+            <option value="Study">📚 Study</option>
+            <option value="Coding">💻 Coding</option>
+            <option value="Reading">📖 Reading</option>
+        </select>
+
+        <select id="priority">
+            <option value="High">🔴 High</option>
+            <option value="Medium">🟡 Medium</option>
+            <option value="Low">🟢 Low</option>
+        </select>
+
+        <input
+            type="time"
+            id="habitTime">
+
+    </div>
+
+    <textarea
+        id="habitNotes"
+        rows="3"
+        placeholder="📝 Notes (Optional)..."></textarea>
+
+    <button onclick="addHabit()">➕ Add Habit</button>
+
+    <input
+        type="text"
+        id="searchHabit"
+        placeholder="🔍 Search Habit..."
+        onkeyup="searchHabit()">
+
+    <div class="filters">
+        <button onclick="filterHabits('all')">All</button>
+        <button onclick="filterHabits('completed')">Completed</button>
+        <button onclick="filterHabits('pending')">Pending</button>
+    </div>
+
+    <p id="progress"></p>
+
+    <div class="progress-bar">
+        <div id="progressFill"></div>
+    </div>
+
+    <div class="stats">
+
+        <div>
+            <h3>Total</h3>
+            <p id="totalHabits">0</p>
+        </div>
+
+        <div>
+            <h3>Completed</h3>
+            <p id="completedHabits">0</p>
+        </div>
+
+        <div>
+            <h3>Pending</h3>
+            <p id="pendingHabits">0</p>
+        </div>
+
+        <div>
+            <h3>Completion</h3>
+            <p id="completionRate">0%</p>
+        </div>
+
+    </div>
+
+    <button onclick="markDayComplete()">✅ Complete Day</button>
+
+    <button onclick="resetHabits()">🔄 Reset Day</button>
+
+    <button onclick="toggleTheme()">🌙 Dark Mode</button>
+
+    <p id="dayStatus">Days Completed : 0</p>
+
+    <ul id="habitList"></ul>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
